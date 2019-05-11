@@ -2,214 +2,177 @@
 <html lang="en">
 
 <head>
-    <title>rosterIQ</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>rosterIQ</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!--    Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+  <!--    Bootstrap -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
 
-    <!--    Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
+  <!--    Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
 
 
-    <!--    Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!--    Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <!--    Leaflet -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.1.0/dist/MarkerCluster.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.1.0/dist/MarkerCluster.Default.css">
+  <!--    Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.1.0/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.1.0/dist/MarkerCluster.Default.css">
 
-    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.css">-->
+  <!-- Custom -->
+  <link rel="stylesheet" href="stylesheet.css">
 
-    <!--    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-ajax/2.1.0/leaflet.ajax.min.js" type="text/javascript"></script>-->
-    <!-- Custom -->
-    <link rel="stylesheet" href="stylesheet.css">
-
-    <!--    GeoJSON -->
-    <!--
+  <!--    GeoJSON -->
+  <!--
     <script src="map.geojson" type="text/javascript">
     </script>
 -->
 </head>
 
 <body>
-    <div class="container-fluid">
-        <div class="row siteHeader">
-            <img src="rosterIQ_Logo.svg" class="mainLogo" />
-        </div>
-        <div class="row">
-            <div class="col-md-9 inputs" id="years">
-                <!--
-                <input type="checkbox" class="Year" name="2007" value="2007" checked="true">
-                <label for="2007">2007</label>
-                <input type="checkbox" class="Year" name="2008" value="2008" checked="true">
-                <label for="2008">2008</label>
-                <input type="checkbox" class="Year" name="2009" value="2009" checked="true">
-                <label for="2009">2009</label>
-                <input type="checkbox" class="Year" name="2010" value="2010" checked="true">
-                <label for="2010">2010</label>
-                <input type="checkbox" class="Year" name="2011" value="2011" checked="true">
-                <label for="2011">2011</label>
-                <input type="checkbox" class="Year" name="2012" value="2012" checked="true">
-                <label for="2012">2012</label>
-                <input type="checkbox" class="Year" name="2013" value="2013" checked="true">
-                <label for="2013">2013</label>
--->
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-3">
-                <div class="filterSection-label">
-                    Select Team:
-                </div>
-                <div class="inputs d-inline" id="team-names">
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Alabama</span>
-                                <input type="checkbox" class="TeamName" name="Alabama" value="Alabama" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Arkansas</span>
-                                <input type="checkbox" class="TeamName" name="Arkansas" value="Arkansas" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Auburn</span>
-                                <input type="checkbox" class="TeamName" name="Auburn" value="Auburn" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Florida</span>
-                                <input type="checkbox" class="TeamName" name="Florida" value="Florida" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Georgia</span>
-                                <input type="checkbox" class="TeamName" name="Georgia" value="Georgia" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Kentucky</span>
-                                <input type="checkbox" class="TeamName" name="Kentucky" value="Kentucky" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>LSU</span>
-                                <input type="checkbox" class="TeamName" name="LSU" value="LSU" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Mississippi St.</span>
-                                <input type="checkbox" class="TeamName" name="Mississippi State" value="Mississippi State" checked="false">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Ole Miss</span>
-                                <input type="checkbox" class="TeamName" name="Mississippi" value="Mississippi" checked="False">
-                            </label>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Missouri</span>
-                                <input type="checkbox" class="team-name" name="Missouri" value="Missouri" checked="true">
-                            </label>
-                        </div>
-                    </div>
--->
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>South Carolina</span>
-                                <input type="checkbox" class="TeamName" name="South Carolina" value="South Carolina" checked="False">
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Tennessee</span>
-                                <input type="checkbox" class="TeamName" name="Tennessee" value="Tennessee" checked="False">
-                            </label>
-                        </div>
-                    </div>
-                    <!--
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Texas A&amp;M</span>
-                                <input type="checkbox" class="team-name" name="Alabama" value="" checked="true">
-                            </label>
-                        </div>
-                    </div>
--->
-                    <div class="checkDiv">
-                        <div id="checkBtn">
-                            <label>
-                                <span>Vanderbilt</span>
-                                <input type="checkbox" class="TeamName" name="Vanderbilt" value="Vanderbilt" checked="true">
-                            </label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="mapContainer" class="col-md-9 p-0">
-                <div class="filterSection-label pl-0">
-                    Select Season:
-                </div>
-                <div class="d-flex justify-content-center flex-column">
-                    <div class="d-flex justify-content-between pb-4">
-                        <span>2007</span>
-                        <span>2008</span>
-                        <span>2009</span>
-                        <span>2010</span>
-                        <span>2011</span>
-                        <span>2012</span>
-                        <span>2013</span>
-                    </div>
-                    <input type="range" name="Year" step="1" min="2007" max="2013" style="display: block; margin: 0 auto;">
-                </div>
-                <div id="map" class="map"></div>
-            </div>
-        </div>
+  <div class="grid-container">
+    <div class="navbar siteHeader">
+      <img src="rosterIQ_Logo.svg" class="mainLogo" />
+      <div class="menu">
+        <a class="menuLink" href="home.html">HOME</a>
+        <a class="menuLink" href="explore.html">EXPLORE</a>
+        <a class="menuLink" href="about.html">ABOUT</a>
+      </div>
     </div>
+    <div class="teamFilter">
+      <div class="filterSection-label">
+        Select Team:
+      </div>
+      <div class="inputs d-inline" id="team-names">
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Alabama</span>
+              <input type="checkbox" class="TeamName" name="Alabama" value="Alabama" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Arkansas</span>
+              <input type="checkbox" class="TeamName" name="Arkansas" value="Arkansas" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Auburn</span>
+              <input type="checkbox" class="TeamName" name="Auburn" value="Auburn" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Florida</span>
+              <input type="checkbox" class="TeamName" name="Florida" value="Florida" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Georgia</span>
+              <input type="checkbox" class="TeamName" name="Georgia" value="Georgia" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Kentucky</span>
+              <input type="checkbox" class="TeamName" name="Kentucky" value="Kentucky" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>LSU</span>
+              <input type="checkbox" class="TeamName" name="LSU" value="LSU" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Mississippi St.</span>
+              <input type="checkbox" class="TeamName" name="Mississippi State" value="Mississippi State" checked="false">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Ole Miss</span>
+              <input type="checkbox" class="TeamName" name="Mississippi" value="Mississippi" checked="False">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>South Carolina</span>
+              <input type="checkbox" class="TeamName" name="South Carolina" value="South Carolina" checked="False">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Tennessee</span>
+              <input type="checkbox" class="TeamName" name="Tennessee" value="Tennessee" checked="False">
+            </label>
+          </div>
+        </div>
+        <div class="checkDiv">
+          <div id="checkBtn">
+            <label>
+              <span>Vanderbilt</span>
+              <input type="checkbox" class="TeamName" name="Vanderbilt" value="Vanderbilt" checked="true">
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="yearSlider">
+      <div class="filterSection-label">
+        Choose Season:
+      </div>
+      <div id="slider" class="d-flex justify-content-center flex-column">
+        <div class="yearList d-flex justify-content-between pb-4">
+          <span>2007</span>
+          <span>2008</span>
+          <span>2009</span>
+          <span>2010</span>
+          <span>2011</span>
+          <span>2012</span>
+          <span>2013</span>
+        </div>
+        <input id="years" type="range" name="Year" step="1" min="2007" max="2013" style="display: block; margin: 0 auto;">
+      </div>
+    </div>
+    <div class="mapSection">
+      <div id="map" class="map"></div>
+    </div>
+  </div>
 
-    <!--
+  <!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js"></script>
 -->
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet.markercluster@1.1.0/dist/leaflet.markercluster.js"></script>
-    <script src="app.js"></script>
-</body></html>
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet.markercluster@1.1.0/dist/leaflet.markercluster.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,94 +1,115 @@
 /* CONTENTS */
 /*
- 
+
     1. Global Utility Styles
-    
+
 
 
 
 */
-
 /* GLOBAL UTILITY STYLES */
 html {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 body {
-    background: rgba(0, 0, 0, 1);
-    color: white;
+  background: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Lato', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-/*
-#mapContainer {
-    display: flex;
-}
-*/
-
-/*
-div label input {
-    margin-right: 100px;
-}
-*/
-
-body {
-    font-family: 'Lato', sans-serif;
-    -webkit-user-select: none;
-     -moz-user-select: -moz-none;
-      -ms-user-select: none;
-          user-select: none;
+a {
+  color: rgba(255, 255, 255, 1);
+  font-family: 'Lato', sans-serif;
 }
 
-.siteHeader {
-    height: 7vh;
-    padding: 0px 20px 0px 20px;
+a:hover {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  grid-template-rows: 0.2fr 0.3fr 1.5fr;
+  grid-template-areas: "navbar navbar""teamFilter yearSlider""teamFilter mapSection";
+  grid-gap: 15px;
+  height: 100vh;
+}
+
+.navbar {
+  grid-area: navbar;
+  padding: 0px 20px 0px 20px;
+}
+
+.menuLink {
+  padding: 0 20px 0 20px;
+}
+
+.teamFilter {
+  grid-area: teamFilter;
+}
+
+.yearSlider {
+  grid-area: yearSlider;
+}
+
+.mapSection {
+  grid-area: mapSection;
+  height: 100%;
 }
 
 .mainLogo {
-    width: 150px;
+  width: 150px;
 }
 
 label {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 
+/* CHECKBOX STYLES */
 input[type=checkbox] {
-    cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: 0
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0
 }
 
 input[type=checkbox]:after {
-    font-family: "Font Awesome 5 Free" !important;
-    font-weight: 900;
-    font-size: 12px;
-    content: "\f067";
-    color: rgba(107, 107, 107, 1);
+  font-family: "Font Awesome 5 Free" !important;
+  font-weight: 900;
+  font-size: 12px;
+  content: "\f067";
+  color: rgba(107, 107, 107, 1);
 }
 
 input[type=checkbox]:checked:after {
-    font-family: "Font Awesome 5 Free";
-    content: "\f00d";
-    color: rgba(107, 107, 107, 1);
+  font-family: "Font Awesome 5 Free";
+  content: "\f00d";
+  color: rgba(107, 107, 107, 1);
 }
 
 .checkDiv {
-    display: inline-flex;
-    margin: 10px;
+  display: inline-flex;
+  margin: 10px;
 }
 
 input[type=checkbox]:checked #checkBtn {
-    background: rgba(165, 165, 165, 1);
+  background: rgba(165, 165, 165, 1);
 }
 
 #checkBtn {
-    flex: 0 0 auto;
-    background-color: rgba(0, 0, 0, 1);
-    border: 3px solid rgba(107, 107, 107, 1);
-    border-radius: 6px;
-    color: rgba(107, 107, 107, 1);
-    font-size: 12px;
+  flex: 0 0 auto;
+  background-color: rgba(0, 0, 0, 1);
+  border: 3px solid rgba(107, 107, 107, 1);
+  border-radius: 6px;
+  color: rgba(107, 107, 107, 1);
+  font-size: 12px;
 }
 
 /*
@@ -101,71 +122,38 @@ input[type=checkbox]:checked #checkBtn {
     color: rgba(0, 0, 0, 1);
 }
 */
-
-#checkBtn input:checked + label {
-    background-color: #911;
-    color: #fff;
+#checkBtn input:checked+label {
+  background-color: #911;
+  color: #fff;
 }
 
 #checkBtn label {
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 5.5px 9px 5.5px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 5.5px 9px 5.5px;
 }
 
 #checkBtn label span {
-    margin-right: 20px;
-    font-weight: 800;
+  margin-right: 20px;
+  font-weight: 800;
 }
 
 #checkBtn label input {
-    text-align: center;
-    min-width: 16px;
+  text-align: center;
+  min-width: 16px;
 }
 
-/*
-#ck-button {
-    display: flex;
-    flex: 0 0 auto;
-    background-color: #EFEFEF;
-    border-radius: 4px;
-    border: 1px solid #D0D0D0;
-}
-
-#ck-button:hover {
-    background: red;
-}
-
-#ck-button label {
-    float: left;
-    width: 4.0em;
-}
-
-#ck-button label span {
-    text-align: center;
-    padding: 3px 0px;
-    display: block;
-}
-
-#ck-button label input {
-    position: absolute;
-    top: -20px;
-}
-
-#ck-button input:checked + span {
-    background-color: #911;
-    color: #fff;
-}
-*/
-
+/* TIME SLIDER STYLES */
 input[type=range] {
   -webkit-appearance: none;
   width: 98%;
   margin: 15px 0;
 }
+
 input[type=range]:focus {
   outline: none;
 }
+
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
   height: 6px;
@@ -175,6 +163,7 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 1px;
   border: 0px solid rgba(0, 1, 1, 0);
 }
+
 input[type=range]::-webkit-slider-thumb {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -186,9 +175,11 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -15px;
 }
+
 input[type=range]:focus::-webkit-slider-runnable-track {
   background: #6e6e6e;
 }
+
 input[type=range]::-moz-range-track {
   width: 100%;
   height: 6px;
@@ -198,6 +189,7 @@ input[type=range]::-moz-range-track {
   border-radius: 1px;
   border: 0px solid rgba(0, 1, 1, 0);
 }
+
 input[type=range]::-moz-range-thumb {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -207,6 +199,7 @@ input[type=range]::-moz-range-thumb {
   background: #fde74d;
   cursor: pointer;
 }
+
 input[type=range]::-ms-track {
   width: 100%;
   height: 6px;
@@ -215,18 +208,21 @@ input[type=range]::-ms-track {
   border-color: transparent;
   color: transparent;
 }
+
 input[type=range]::-ms-fill-lower {
   background: #686868;
   border: 0px solid rgba(0, 1, 1, 0);
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
 }
+
 input[type=range]::-ms-fill-upper {
   background: #6b6b6b;
   border: 0px solid rgba(0, 1, 1, 0);
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
 }
+
 input[type=range]::-ms-thumb {
   box-shadow: 1px 1px 1px rgba(0, 0, 0, 0), 0px 0px 1px rgba(13, 13, 13, 0);
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -237,55 +233,56 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
   height: 6px;
 }
+
 input[type=range]:focus::-ms-fill-lower {
   background: #6b6b6b;
 }
+
 input[type=range]:focus::-ms-fill-upper {
   background: #6e6e6e;
 }
 
-
-
-
-
-#mapContainer {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-}
-.sectionRight {
-    
+#slider {
+  margin: 0px 15px 15px 15px;
 }
 
-.map {
-    height: 80vh;
+.yearList {
+  font-size: .8rem;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
 }
 
 .filterSection-label {
-    color: rgba(257, 231, 77, 1);
-    padding: 0px 10px 0px 10px;
+  color: rgba(257, 231, 77, 1);
+  padding: 0px 10px 0px 10px;
 }
 
 .playerName {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-.lastName, .firstName {
-    font-family: 'Lato', sans-serif;
-    font-style: italic;
+.lastName,
+.firstName {
+  font-family: 'Lato', sans-serif;
+  font-style: italic;
 }
 
 .lastName {
-    font-size: 1.2rem;
-    font-weight: bolder;
+  font-size: 1.2rem;
+  font-weight: bolder;
 }
 
 .firstName {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
-.playerPosition, .playerHeight, .playerWeight, .lastSchool {
-    font-size: .8rem;
-    font-weight: bold;
+.playerPosition,
+.playerHeight,
+.playerWeight,
+.lastSchool {
+  font-size: .8rem;
+  font-weight: bold;
 }
