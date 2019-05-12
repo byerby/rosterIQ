@@ -13,29 +13,37 @@ var markers = L.markerClusterGroup()
 var geoJsonLayer = L.geoJson(null, {
     filter: (feature) => {
         const thisYear = selectedYear.value.includes(feature.properties.Year)
-        
+
         const thisTeam = checkboxStates.teamNames.includes(feature.properties.TeamName)
-        return thisYear && thisTeam
+        const thisPosition = checkboxStates.positions.includes(feature.properties.Position)
+        return thisYear && thisTeam && thisPosition
     },
     onEachFeature: function (feature, layer) {
+//        if (feature.properties.Position == "QB") {
+//            feature.properties.Position = "Quarterback"
+//        }
+
         layer.bindPopup("<span class='firstName'>" + feature.properties.FirstName + " </span>" + "<span class='lastName'>" + feature.properties.LastName + "</span>" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "<span class='uniformNumber'>" + feature.properties.UniformNumber + "</span>" + "<br />" + "<span class='teamName'>" + feature.properties.TeamName + "</span>" + "<br />" + "<span class='playerPosition'>" + feature.properties.Position + "</span>" + "<br />" + "<span class='playerHeight'>" + feature.properties.Height + "</span>" + " in" + "<br />" + "<span class='playerWeight'>" + feature.properties.Weight + "</span>" + " lbs" + "<br />" + "<span class='lastSchool'>" + feature.properties.LastSchool + "</span>")
     }
 });
 
 function updateCheckboxStates() {
     checkboxStates = {
-        teamNames: []
+        teamNames: [],
+        positions: []
+
     }
 
     selectedYear = document.getElementById("Year")
 
     for (let input of document.querySelectorAll('input:checked')) {
         checkboxStates.teamNames.push(input.value)
+        checkboxStates.positions.push(input.value)
     }
 
     console.log(selectedYear.value)
     console.log(checkboxStates.teamNames)
-    
+
     geoJsonLayer.addData(geoJsonData)
     markers.addLayer(geoJsonLayer)
     map.addLayer(markers)

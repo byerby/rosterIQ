@@ -86,7 +86,8 @@ a:hover {
 }
 
 .mainLogo {
-    width: 150px;
+    width: 180px;
+    margin: 10px;
 }
 
 label {
@@ -278,7 +279,9 @@ input[type=range]:focus::-ms-fill-upper {
     height: 100%;
     width: 100%;
 }
-
+.teamFilter-section {
+    padding-bottom: 30px;
+}
 .filterSection-label {
     color: rgba(257, 231, 77, 1);
     padding: 0px 10px 0px 10px;
