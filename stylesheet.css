@@ -10,7 +10,6 @@
 
 /* GLOBAL UTILITY STYLES */
 
-
 @font-face {
     font-family: 'Bombardier';
     src: url('fonts/Bombardier.ttf.woff') format('woff'),
@@ -28,6 +27,48 @@
     font-style: normal;
 }
 
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(107, 107, 107, 1);
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(107, 107, 107, 1);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgba(107, 107, 107, 1);
+}
+
+::-webkit-scrollbar-track {
+    background: #000000;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #000000;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #000000;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
 html {
     font-size: 16px;
 }
@@ -40,7 +81,10 @@ body {
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     user-select: none;
+    overflow: hidden;
 }
+
+
 
 a {
     color: rgba(255, 255, 255, 1);
@@ -53,12 +97,44 @@ a:hover {
     color: rgba(255, 255, 255, 1);
 }
 
-.grid-container {
+.bg {
+    animation: slide 8s ease-in-out infinite alternate;
+    background-image: linear-gradient(-75deg, #fde74d 50%, rgba(0, 0, 0, 1) 30%);
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-direction: alternate-reverse;
+    animation-duration: 9s;
+}
+
+/*
+.bg3 {
+    animation-duration: 10s;
+}
+*/
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+.home-container {
     display: grid;
-    grid-template-columns: 0.3fr 1fr;
-    grid-template-rows: 0.2fr 0.3fr 1.5fr;
-    grid-template-areas: "navbar navbar""teamFilter yearSlider""teamFilter mapSection";
-    grid-gap: 15px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.2fr 0.2fr 1.2fr;
+    grid-template-areas: "navbar""intro""selectSport";
     height: 100vh;
 }
 
@@ -67,13 +143,81 @@ a:hover {
     padding: 0px 20px 0px 20px;
 }
 
+.intro {
+    grid-area: intro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.briefDesc {
+    font-size: 1.5rem;
+}
+
+
+.selectSport {
+    grid-area: selectSport;
+}
+
+.selectSport-label {
+    color: rgba(255, 231, 77, 1);
+    font-size: 1.2rem;
+    margin: 50px 0 50px 0;
+    text-align: center;
+}
+
+.sportIcon-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sportIcon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: .2s ease-in-out;
+}
+
+.sportIcon-text {
+    font-family: 'Bombardier', sans-serif;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.sportIcon:hover {
+    color: rgba(255, 231, 77, 1);
+}
+
+/*
+div#sportIcon-tennis {
+    background: url('assets/tennis.svg');
+}
+
+div#sportIcon-tennis:hover {
+    background: url('assets/tennis_hover.svg');
+}
+*/
+
+.explore-container {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr;
+    grid-template-rows: 0.2fr 0.3fr 1.5fr;
+    grid-template-areas: "navbar navbar""teamFilter yearSlider""teamFilter mapSection";
+    grid-gap: 15px;
+    height: 100vh;
+}
+
 .menuLink {
     padding: 0 20px 0 20px;
 }
 
 .teamFilter {
     grid-area: teamFilter;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .yearSlider {
@@ -114,7 +258,7 @@ input[type=checkbox]:after {
 input[type=checkbox]:checked:after {
     font-family: "Font Awesome 5 Free";
     content: "\f00d";
-    color: rgba(107, 107, 107, 1);
+    color: rgba(255, 237, 77, 1);
 }
 
 .checkDiv {
@@ -122,17 +266,38 @@ input[type=checkbox]:checked:after {
     margin: 10px;
 }
 
+/*
 input[type=checkbox]:checked #checkBtn {
     background: rgba(165, 165, 165, 1);
 }
+*/
 
-#checkBtn {
+/*
+label { 
+  -webkit-appearance: push-button;
+  -moz-appearance: button; 
+  display: inline-block;
+  margin: 60px 0 10px 0;
+  cursor: pointer;
+}
+*/
+
+/* Default State */
+.checkBtn {
     flex: 0 0 auto;
     background-color: rgba(0, 0, 0, 1);
     border: 3px solid rgba(107, 107, 107, 1);
     border-radius: 6px;
     color: rgba(107, 107, 107, 1);
     font-size: 12px;
+}
+
+/* Toggled State */
+input[type=checkbox]:checked ~ .checkDiv {
+    background-color: rgba(165, 165, 165, 1);
+    border: 3px solid rgba(165, 165, 165, 1);
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 1);
 }
 
 /*
@@ -146,27 +311,21 @@ input[type=checkbox]:checked #checkBtn {
 }
 */
 
-#checkBtn input:checked + label {
-    background-color: #911;
-    color: #fff;
-}
-
-#checkBtn label {
+.checkBtn label {
     justify-content: space-between;
     align-items: center;
     padding: 9px 5.5px 9px 5.5px;
 }
 
-#checkBtn label span {
+.checkBtn label span {
     margin-right: 20px;
     font-weight: 800;
 }
 
-#checkBtn label input {
+.checkBtn label input {
     text-align: center;
     min-width: 16px;
 }
-
 
 /* TIME SLIDER STYLES */
 input[type=range] {
@@ -279,11 +438,13 @@ input[type=range]:focus::-ms-fill-upper {
     height: 100%;
     width: 100%;
 }
+
 .teamFilter-section {
     padding-bottom: 30px;
 }
+
 .filterSection-label {
-    color: rgba(257, 231, 77, 1);
+    color: rgba(255, 231, 77, 1);
     padding: 0px 10px 0px 10px;
 }
 
