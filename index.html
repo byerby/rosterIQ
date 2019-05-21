@@ -40,7 +40,7 @@
 -->
 </head>
 
-<body>
+<body class="home">
     <div class="home-container">
         <div class="bg"></div>
         <div class="bg bg2"></div>
@@ -56,47 +56,45 @@
             <div class="briefDesc">An Interactive Map of Athletic Rosters</div>
         </div>
         <div class="selectSport">
-            <div class="selectSport-label">Select Sport</div>
+            <div class="selectSport-label">
+                <div class="labelText"><span>Select Sport</span></div>
+            </div>
             <div class="sportIcon-section">
                 <a href="ncaaFootball.html">
                     <div class="sportIcon">
-                        <img id="sportIcon-football" src="assets/football.svg">
+                        <img id="sportIcon-football" src="assets/football.svg" onmouseover="hover(this);" onmouseout="unhover(this);">
                         <span class="sportIcon-text">Football</span>
                     </div>
                 </a>
-                <a href="#">
-                    <div class="sportIcon">
-                        <img id="sportIcon-baskbetball" src="assets/basketball.svg">
-                        <span class="sportIcon-text">Basketball</span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="sportIcon">
-                        <img id="sportIcon-volleyball" src="assets/volleyball.svg">
-                        <span class="sportIcon-text">Volleyball</span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div id="sportIcon-tennis" class="sportIcon">
-                        <img id="sportIcon-tennis" src="assets/tennis.svg">
-                        <span class="sportIcon-text">Tennis</span>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="sportIcon">
-                        <img id="sportIcon-soccer" src="assets/soccer.svg">
-                        <span class="sportIcon-text">Soccer</span>
-                    </div>
-                </a>
+            </div>
+            <div class="comingSoon-label">
+                <div class="labelText">Coming Soon</div>
+            </div>
+            <div class="sportIcon-section">
+                <div class="sportIcon-coming">
+                    <img id="sportIcon-baskbetball" src="assets/basketball.svg">
+                    <span class="sportIcon-text">Basketball</span>
+                </div>
+                <div class="sportIcon-coming">
+                    <img id="sportIcon-volleyball" src="assets/volleyball.svg">
+                    <span class="sportIcon-text">Volleyball</span>
+                </div>
+                <div class="sportIcon-coming">
+                    <img id="sportIcon-tennis" src="assets/tennis.svg">
+                    <span class="sportIcon-text">Tennis</span>
+                </div>
+
+                <div class="sportIcon-coming">
+                    <img id="sportIcon-soccer" src="assets/soccer.svg">
+                    <span class="sportIcon-text">Soccer</span>
+                </div>
             </div>
         </div>
     </div>
-
-    <!--
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js"></script>
--->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.1.0/dist/leaflet.markercluster.js"></script>
     <script src="app.js"></script>
-</body></html>
+</body>
+
+</html>

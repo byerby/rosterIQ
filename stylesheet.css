@@ -2,13 +2,16 @@
 /*
  
     1. Global Utility Styles
+    2. Home Page Styles
+    3. About Page Styles
+    4. Explore Page Styles
     
 
 
 
 */
 
-/* GLOBAL UTILITY STYLES */
+/* 1. GLOBAL UTILITY STYLES */
 
 @font-face {
     font-family: 'Bombardier';
@@ -83,7 +86,9 @@ body {
     user-select: none;
 }
 
-
+body.home {
+    overflow: hidden;
+}
 
 a {
     color: rgba(255, 255, 255, 1);
@@ -98,7 +103,7 @@ a:hover {
 
 .bg {
     animation: slide 8s ease-in-out infinite alternate;
-    background-image: linear-gradient(-75deg, #fde74d 50%, rgba(0, 0, 0, 1) 30%);
+    background-image: linear-gradient(-75deg, rgba(255, 230, 77, .6) 50%, rgba(0, 0, 0, 1) 30%);
     bottom: 0;
     left: -50%;
     opacity: .5;
@@ -123,6 +128,7 @@ a:hover {
     }
 }
 
+/**** 2. HOME PAGE *****/
 .home-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -154,15 +160,24 @@ a:hover {
 
 .selectSport-label {
     color: rgba(255, 231, 77, 1);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin: 50px 0 50px 0;
+    display: flex;
+    justify-content: center;
     text-align: center;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
 }
+
 
 .sportIcon-section {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.sportIcon-section {
+    margin-bottom: 100px;
 }
 
 .sportIcon {
@@ -173,6 +188,21 @@ a:hover {
     align-items: center;
     justify-content: center;
     transition: .2s ease-in-out;
+}
+.comingSoon-label {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+    margin: 50px;
+}
+.sportIcon-coming {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .sportIcon-text {
@@ -185,16 +215,8 @@ a:hover {
     color: rgba(255, 231, 77, 1);
 }
 
-/*
-div#sportIcon-tennis {
-    background: url('assets/tennis.svg');
-}
 
-div#sportIcon-tennis:hover {
-    background: url('assets/tennis_hover.svg');
-}
-*/
-
+/**** 3. ABOUT PAGE *****/
 .about-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -279,6 +301,7 @@ div#sportIcon-tennis:hover {
 .left p {
     padding: 15px 0 8px;
 }
+
 .aboutCenter > .aboutSectionTitle {
     margin: 30px 0 30px 0;
 }
@@ -313,6 +336,8 @@ div#sportIcon-tennis:hover {
     margin-right: 80px;
 }
 
+
+/**** 4. EXPLORE PAGE *****/
 .explore-container {
     display: grid;
     grid-template-columns: 0.3fr 1fr;

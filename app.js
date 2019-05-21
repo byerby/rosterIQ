@@ -64,36 +64,17 @@ for (let input of document.querySelectorAll('input')) {
 /****** INIT ******/
 updateCheckboxStates()
 
-//var clicked = false;
-//
-//$("input[type=checkbox]").click(function () {
-//    if (clicked == false) {
-//        $(this).parent("label").parent("div").css("background-color", "rgba(107, 107, 107)");
-//        $(this).parent("label").parent("div").css("border-color", "rgba(107, 107, 107)");
-//        $(this).parent("label").parent("div").css("color", "#000000");
-//        return clicked = true;
-//    } else {
-//        $(this).parent("label").parent("div").css("background-color", "#000000");
-//        $(this).parent("label").parent("div").css("color", "rgba(107, 107, 107)");
-//        return clicked = false;
-//    }
-//});
-
-//var clicked = false;
-//
-//$("input[type=checkbox]").click(function () {
-//    if (clicked == false) {
-//        $(this).sibling("span").css("color", "rgba(107, 107, 107, 1)");
-//        clicked = true;
-//    } else {
-//        $(this).sibling("span").css("color", "rgba(255, 237, 77, 1)");
-//        clicked = false;
-//    }
-//})
-
 $("input[type=checkbox]").change(function () {
     var textChange = this.checked ? 'rgba(0, 0, 0, 1' : 'rgba(107, 107, 107, 1)';
     var backgroundChange = this.checked ? 'rgba(107, 107, 107, 1)' : 'rgba(0, 0, 0, 1)';
     $(this).parent("label").css('color', textChange);
     $(this).parent("label").parent("div").css('background-color', backgroundChange);
 });
+
+function hover(element) {
+    element.setAttribute('src', 'assets/football_hover.svg')
+}
+
+function unhover(element) {
+    element.setAttribute('src', 'assets/football.svg')
+}
