@@ -1,3 +1,19 @@
+function initCheckStyle() {
+    $("input[type=checkbox].Position").parent("label").css('color', 'rgba(0, 0, 0, 1)');
+    $("input[type=checkbox].Position").parent("label").parent("div").css('background-color', 'rgba(107, 107, 107, 1)');
+    
+     $("input[type=checkbox].Conference").parent("label").css('color', 'rgba(0, 0, 0, 1)');
+    $("input[type=checkbox].Conference").parent("label").parent("div").css('background-color', 'rgba(107, 107, 107, 1)');
+}
+$(window).on("load", initCheckStyle);
+//
+//function func1() {
+//    alert("This is the first.");
+//}
+//window.onload = func1;
+
+
+
 const map = L.map('map').setView([39.8333333, -98.585522], 4);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -64,8 +80,15 @@ for (let input of document.querySelectorAll('input')) {
 /****** INIT ******/
 updateCheckboxStates()
 
-$("input[type=checkbox]").change(function () {
-    var textChange = this.checked ? 'rgba(0, 0, 0, 1' : 'rgba(107, 107, 107, 1)';
+$("input[type=checkbox].TeamName").change(function () {
+    var textChange = this.checked ? 'rgba(0, 0, 0, 1)' : 'rgba(107, 107, 107, 1)';
+    var backgroundChange = this.checked ? 'rgba(107, 107, 107, 1)' : 'rgba(0, 0, 0, 1)';
+    $(this).parent("label").css('color', textChange);
+    $(this).parent("label").parent("div").css('background-color', backgroundChange);
+});
+
+$("input[type=checkbox].Position").change(function () {
+    var textChange = this.checked ? 'rgba(0, 0, 0, 1)' : 'rgba(107, 107, 107, 1)';
     var backgroundChange = this.checked ? 'rgba(107, 107, 107, 1)' : 'rgba(0, 0, 0, 1)';
     $(this).parent("label").css('color', textChange);
     $(this).parent("label").parent("div").css('background-color', backgroundChange);

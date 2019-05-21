@@ -181,14 +181,19 @@ a:hover {
 }
 
 .sportIcon {
-    width: 100px;
     height: 100px;
+    width: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transition: .2s ease-in-out;
 }
+
+.sportIcon:hover {
+    color: rgba(255, 231, 77, 1);
+    width: 140px;
+}
+
 .comingSoon-label {
     display: block;
     margin: 0 auto;
@@ -196,6 +201,7 @@ a:hover {
     font-weight: bold;
     margin: 50px;
 }
+
 .sportIcon-coming {
     width: 50px;
     height: 50px;
@@ -211,10 +217,9 @@ a:hover {
     font-size: 1.2rem;
 }
 
-.sportIcon:hover {
-    color: rgba(255, 231, 77, 1);
+.sportIcon-text.iconSoon {
+    margin-top: -40px;
 }
-
 
 /**** 3. ABOUT PAGE *****/
 .about-container {
@@ -230,6 +235,9 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 0, 0, 1);
 }
 
 .aboutSection {
@@ -415,7 +423,7 @@ input[type=checkbox] {
     outline: 0
 }
 
-input[type=checkbox]:after {
+input[type=checkbox].TeamName:after, input[type=checkbox].Position:after {
     font-family: "Font Awesome 5 Free" !important;
     font-weight: 900;
     font-size: 12px;
@@ -423,7 +431,15 @@ input[type=checkbox]:after {
     color: rgba(107, 107, 107, 1);
 }
 
-input[type=checkbox]:checked:after {
+input[type=checkbox].Conference:after {
+    font-family: "Font Awesome 5 Free" !important;
+    font-weight: 900;
+    font-size: 12px;
+    content: "\f068";
+    color: rgba(0, 0, 0, 1);
+}
+
+input[type=checkbox].TeamName:checked:after, input[type=checkbox].Position:checked:after {
     font-family: "Font Awesome 5 Free";
     content: "\f068";
     color: rgba(0, 0, 0, 1);
