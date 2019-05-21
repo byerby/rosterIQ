@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>rosterIQ</title>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#fbde4e">
+    <meta name="apple-mobile-web-app-title" content="rosterIQ">
+    <meta name="application-name" content="rosterIQ">
+    <meta name="msapplication-TileColor" content="#393939">
+    <meta name="theme-color" content="#393939">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--    Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css">
+
+    <!--    Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700,700i,900,900i" rel="stylesheet">
+
+
+    <!--    Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!--    Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.1.0/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.1.0/dist/MarkerCluster.Default.css">
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!--    GeoJSON -->
+    <!--
+    <script src="map.geojson" type="text/javascript">
+    </script>
+-->
+</head>
+
+<body>
+    <div class="about-container">
+        <div class="aboutNavbar siteHeader">
+            <img src="rosterIQ_Logo_White.svg" class="mainLogo" />
+            <div class="menu">
+                <a class="menuLink" href="index.html">HOME</a>
+                <a class="menuLink" href="about.html">ABOUT</a>
+            </div>
+        </div>
+        <div class="aboutSection">
+            <div class="aboutWrapper">
+                <div class="aboutHeader">About Project</div>
+                <div class="aboutMain">
+                    <div class="aboutLeft">
+                        <div class="aboutSectionTitle"><span>Problem</span>
+                        </div>
+                        <p>
+                            Discovering relationships and trends in athletic recruiting patterns
+                        </p>
+                    </div>
+                    <div class="aboutRight">
+                        <div class="aboutSectionTitle"><span>Solution</span>
+                        </div>
+                        <p>
+                            Create an interactive map experience that visualizes the origins of the athletic rosters
+                        </p>
+                    </div>
+                    <div class="aboutCenter">
+                        <div class="aboutSectionTitle"><span>Process</span>
+                        </div>
+                        <div class="processSection-left">
+                            <div class="aboutSectionTitle"><span>1</span>
+                            </div>
+                            <span>Get the Data</span>
+                        </div>
+                        <div class="processSection-right">
+                            <span>Clean the Data</span>
+                            <div class="aboutSectionTitle"><span>2</span>
+                            </div>
+                        </div>
+                        <div class="processSection-left">
+                            <div class="aboutSectionTitle"><span>3</span>
+                            </div>
+                            <span>Geocode the Data</span>
+                        </div>
+                        <div class="processSection-right">
+                            <span>Construct Page Layout</span>
+                            <div class="aboutSectionTitle"><span>4</span>
+                            </div>
+                        </div>
+                        <div class="processSection-left">
+                            <div class="aboutSectionTitle"><span>5</span>
+                            </div>
+                            <span>Include Data</span>
+                        </div>
+                        <div class="processSection-right">
+                            <span>Implement Filtering</span>
+                            <div class="aboutSectionTitle"><span>6</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js"></script>
+-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.1.0/dist/leaflet.markercluster.js"></script>
+
+    <!--    <script src="mapdata.js"></script>-->
+    <script src="sec_map.js"></script>
+    <script src="app.js"></script>
+</body></html>

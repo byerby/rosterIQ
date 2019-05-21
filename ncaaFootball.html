@@ -59,39 +59,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>SEC</span>
-                                <input type="checkbox" class="Conference" name="ACC" value="ACC" checked>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div class="checkBtn">
-                            <label>
-                                <span>ACC</span>
-                                <input type="checkbox" class="Conference" name="ACC" value="ACC" disabled>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div class="checkBtn">
-                            <label>
-                                <span>BIG 10</span>
-                                <input type="checkbox" class="Conference" name="BIG10" value="BIG10" disabled>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div class="checkBtn">
-                            <label>
-                                <span>BIG 12</span>
-                                <input type="checkbox" class="Conference" name="BIG12" value="BIG12" disabled>
-                            </label>
-                        </div>
-                    </div>
-                    <div class="checkDiv">
-                        <div class="checkBtn">
-                            <label>
-                                <span>PAC 12</span>
-                                <input type="checkbox" class="Conference" name="PAC12" value="PAC12" disabled>
+                                <input type="checkbox" class="Conference" name="SEC" value="SEC" checked>
                             </label>
                         </div>
                     </div>
@@ -106,7 +74,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Alabama</span>
-                                <input type="checkbox" class="TeamName" name="Alabama" value="Alabama" checked>
+                                <input type="checkbox" class="TeamName" name="Alabama" value="Alabama">
                             </label>
                         </div>
                     </div>
@@ -114,7 +82,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Arkansas</span>
-                                <input type="checkbox" class="TeamName" name="Arkansas" value="Arkansas" checked>
+                                <input type="checkbox" class="TeamName" name="Arkansas" value="Arkansas">
                             </label>
                         </div>
                     </div>
@@ -122,7 +90,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Auburn</span>
-                                <input type="checkbox" class="TeamName" name="Auburn" value="Auburn" checked>
+                                <input type="checkbox" class="TeamName" name="Auburn" value="Auburn">
                             </label>
                         </div>
                     </div>
@@ -130,7 +98,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Florida</span>
-                                <input type="checkbox" class="TeamName" name="Florida" value="Florida" checked>
+                                <input type="checkbox" class="TeamName" name="Florida" value="Florida">
                             </label>
                         </div>
                     </div>
@@ -138,7 +106,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Georgia</span>
-                                <input type="checkbox" class="TeamName" name="Georgia" value="Georgia" checked>
+                                <input type="checkbox" class="TeamName" name="Georgia" value="Georgia">
                             </label>
                         </div>
                     </div>
@@ -146,7 +114,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Kentucky</span>
-                                <input type="checkbox" class="TeamName" name="Kentucky" value="Kentucky" checked>
+                                <input type="checkbox" class="TeamName" name="Kentucky" value="Kentucky">
                             </label>
                         </div>
                     </div>
@@ -154,7 +122,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>LSU</span>
-                                <input type="checkbox" class="TeamName" name="LSU" value="LSU" checked>
+                                <input type="checkbox" class="TeamName" name="LSU" value="LSU">
                             </label>
                         </div>
                     </div>
@@ -162,7 +130,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Mississippi St.</span>
-                                <input type="checkbox" class="TeamName" name="Mississippi State" value="Mississippi State" checked>
+                                <input type="checkbox" class="TeamName" name="Mississippi State" value="Mississippi State">
                             </label>
                         </div>
                     </div>
@@ -170,7 +138,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Ole Miss</span>
-                                <input type="checkbox" class="TeamName" name="Mississippi" value="Mississippi" checked>
+                                <input type="checkbox" class="TeamName" name="Mississippi" value="Mississippi">
                             </label>
                         </div>
                     </div>
@@ -178,7 +146,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>South Carolina</span>
-                                <input type="checkbox" class="TeamName" name="South Carolina" value="South Carolina" checked>
+                                <input type="checkbox" class="TeamName" name="South Carolina" value="South Carolina">
                             </label>
                         </div>
                     </div>
@@ -186,7 +154,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Tennessee</span>
-                                <input type="checkbox" class="TeamName" name="Tennessee" value="Tennessee" checked>
+                                <input type="checkbox" class="TeamName" name="Tennessee" value="Tennessee">
                             </label>
                         </div>
                     </div>
@@ -194,7 +162,7 @@
                         <div class="checkBtn">
                             <label>
                                 <span>Vanderbilt</span>
-                                <input type="checkbox" class="TeamName" name="Vanderbilt" value="Vanderbilt" checked>
+                                <input type="checkbox" class="TeamName" name="Vanderbilt" value="Vanderbilt">
                             </label>
                         </div>
                     </div>
@@ -204,7 +172,7 @@
                 <div class="filterSection-label">
                     Select Position:
                 </div>
-                <div class="inputs d-inline" id="team-names">
+                <div class="inputs d-inline" id="positions">
                     <div class="checkDiv">
                         <div class="checkBtn">
                             <label>
@@ -362,8 +330,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vuetify@1.5.14/dist/vuetify.min.js"></script>
 -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.1.0/dist/leaflet.markercluster.js"></script>
+
     <!--    <script src="mapdata.js"></script>-->
     <script src="sec_map.js"></script>
     <script src="app.js"></script>

@@ -81,7 +81,6 @@ body {
     -moz-user-select: -moz-none;
     -ms-user-select: none;
     user-select: none;
-    overflow: hidden;
 }
 
 
@@ -113,12 +112,6 @@ a:hover {
     animation-direction: alternate-reverse;
     animation-duration: 9s;
 }
-
-/*
-.bg3 {
-    animation-duration: 10s;
-}
-*/
 
 @keyframes slide {
     0% {
@@ -202,6 +195,124 @@ div#sportIcon-tennis:hover {
 }
 */
 
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 1.4fr;
+    grid-template-areas: "aboutNavbar""aboutSection";
+    grid-gap: 15px;
+}
+
+.aboutNavbar {
+    grid-area: aboutNavbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aboutSection {
+    grid-area: aboutSection;
+    overflow-y: auto;
+}
+
+.aboutHeader {
+    text-align: center;
+    font-family: 'Bombardier', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+}
+
+.aboutWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.aboutMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutLeft {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.aboutLeft p {
+    padding: 5px 0 15px 24px;
+}
+
+.aboutRight p {
+    padding: 5px 24px 15px 0;
+}
+
+.aboutRight {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.aboutCenter {
+    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutSectionTitle {
+    display: inline-flex;
+    background: rgba(255, 231, 77);
+    color: rgba(0, 0, 0, 1);
+    padding: 3px 25px 0 25px;
+    font-size: 2rem;
+    font-family: 'Bombardier', sans-serif;
+    transform: skewX(-12deg);
+}
+
+.aboutSectionTitle span {
+    transform: skewX(12deg);
+}
+
+.aboutSection p {
+    font-size: 1.5rem;
+    font-family: 'Lato';
+}
+
+.left p {
+    padding: 15px 0 8px;
+}
+.aboutCenter > .aboutSectionTitle {
+    margin: 30px 0 30px 0;
+}
+
+.aboutCenter .processSection-left,
+.aboutCenter .processSection-right {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.aboutCenter .processSection-left {
+    text-align: left;
+    align-self: flex-start;
+    font-size: 1.5rem;
+    margin-left: 80px;
+}
+
+.aboutCenter .processSection-left > span {
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+.aboutCenter .processSection-right > span {
+    margin-right: 25px;
+    font-weight: bold;
+}
+
+.aboutCenter .processSection-right {
+    text-align: right;
+    align-self: flex-end;
+    font-size: 1.5rem;
+    margin-right: 80px;
+}
+
 .explore-container {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
@@ -239,6 +350,38 @@ label {
 }
 
 /* CHECKBOX STYLES */
+
+.checkDiv {
+    display: inline-flex;
+    margin: 10px;
+}
+
+/* Default State */
+.checkBtn {
+    flex: 0 0 auto;
+    /*    background-color: rgba(0, 0, 0, 1);*/
+    border: 3px solid rgba(107, 107, 107, 1);
+    border-radius: 6px;
+    color: rgba(107, 107, 107, 1);
+    font-size: 12px;
+}
+
+.checkBtn label {
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 5.5px 9px 5.5px;
+}
+
+.checkBtn label span {
+    margin-right: 20px;
+    font-weight: 800;
+}
+
+.checkBtn label input {
+    text-align: center;
+    min-width: 16px;
+}
+
 input[type=checkbox] {
     cursor: pointer;
     -webkit-appearance: none;
@@ -257,74 +400,8 @@ input[type=checkbox]:after {
 
 input[type=checkbox]:checked:after {
     font-family: "Font Awesome 5 Free";
-    content: "\f00d";
-    color: rgba(255, 237, 77, 1);
-}
-
-.checkDiv {
-    display: inline-flex;
-    margin: 10px;
-}
-
-/*
-input[type=checkbox]:checked #checkBtn {
-    background: rgba(165, 165, 165, 1);
-}
-*/
-
-/*
-label { 
-  -webkit-appearance: push-button;
-  -moz-appearance: button; 
-  display: inline-block;
-  margin: 60px 0 10px 0;
-  cursor: pointer;
-}
-*/
-
-/* Default State */
-.checkBtn {
-    flex: 0 0 auto;
-    background-color: rgba(0, 0, 0, 1);
-    border: 3px solid rgba(107, 107, 107, 1);
-    border-radius: 6px;
-    color: rgba(107, 107, 107, 1);
-    font-size: 12px;
-}
-
-/* Toggled State */
-input[type=checkbox]:checked ~ .checkDiv {
-    background-color: rgba(165, 165, 165, 1);
-    border: 3px solid rgba(165, 165, 165, 1);
-    border-radius: 6px;
+    content: "\f068";
     color: rgba(0, 0, 0, 1);
-}
-
-/*
-input[type=checkbox]:checked #checkBtn {
-    background-color: rgba(165, 165, 165, 1);
-}
-
-#checkBtn label input:checked + #checkBtn {
-    background-color: rgba(165, 165, 165, 1);
-    color: rgba(0, 0, 0, 1);
-}
-*/
-
-.checkBtn label {
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 5.5px 9px 5.5px;
-}
-
-.checkBtn label span {
-    margin-right: 20px;
-    font-weight: 800;
-}
-
-.checkBtn label input {
-    text-align: center;
-    min-width: 16px;
 }
 
 /* TIME SLIDER STYLES */
@@ -475,6 +552,17 @@ input[type=range]:focus::-ms-fill-upper {
 .firstName {
     font-size: 1.5rem;
     font-weight: 400;
+}
+
+.uniformNumber-box {
+    background: rgba(255, 231, 77, 1);
+    display: inline-flex;
+    transform: skewX(-20deg);
+}
+
+.uniformNumber {
+    transform: skewX(20deg);
+    padding: 2px 7px 0 5px;
 }
 
 .playerPosition {
